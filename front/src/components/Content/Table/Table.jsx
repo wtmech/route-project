@@ -29,7 +29,13 @@ const ContentTable = ({ routes }) => {
             accessor: "operator"
           }
         ]}
-        defaultPageSize={10}
+        defaultSorted={[
+          {
+            id: "runNumber",
+            desc: false
+          }
+        ]}
+        defaultPageSize={5}
         className="-striped -highlight"
       />
     </Fragment>
