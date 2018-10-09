@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const path = require("path");
 const bodyParser = require("body-parser"); //You need to use bodyParser() if you want the data to be available in req.body.
 
 const trainRoutes = require("./routes/api/trainRoutes");
