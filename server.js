@@ -6,10 +6,10 @@ const trainRoutes = require("./routes/api/trainRoutes");
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, "front/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  res.sendFile(path.join(__dirname + "/front/build/index.html"));
 });
 
 //Bodyparser middleware
