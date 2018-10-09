@@ -4,11 +4,11 @@
   "description": "App for train schedules",
   "main": "index.js",
   "scripts": {
-    "client-install": "npm install --prefix client",
+    "client-install": "npm install --prefix front",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "front": "npm start --prefix front",
+    "dev": "concurrently \"npm run server\" \"npm run front\""
   },
   "author": "Billy Mech",
   "license": "MIT",
