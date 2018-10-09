@@ -1,26 +1,35 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser'); //You need to use bodyParser() if you want the data to be available in req.body.
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser"); //You need to use bodyParser() if you want the data to be available in req.body.
 
-const trainRoutes = require('./routes/api/trainRoutes');
+const trainRoutes = require("./routes/api/trainRoutes");
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, "client/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
+
 //Bodyparser middleware
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //DB Config
-const db = require('./config/keys').mongoURI;
+const db = require("./config/keys").mongoURI;
 
 //Connect to MongoDB
 mongoose
-  .connect(db, { useNewUrlParser: true })
-  .then(() => console.log('MongoDB connected'))
+  .connect(
+    db,
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log("MongoDB connected"))
   .catch(err => console.log(err));
 
 //Use Routes
-app.use('/api/routes', trainRoutes);
+app.use("/api/routes", trainRoutes);
 
 const port = process.env.PORT || 5000;
 
