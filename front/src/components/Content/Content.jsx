@@ -21,7 +21,6 @@ class Content extends Component {
 
   render() {
     const { routes } = this.props.route;
-    console.log(routes);
     return (
       <div className="table-container">
         {!this.props.settingsView ? (

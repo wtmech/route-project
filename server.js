@@ -9,10 +9,6 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "front/build")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/front/build/index.html"));
-});
-
 //Bodyparser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -31,6 +27,10 @@ mongoose
 
 //Use Routes
 app.use("/api/routes", trainRoutes);
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/front/build/index.html"));
+});
 
 const port = process.env.PORT || 5000;
 
