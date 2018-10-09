@@ -9,7 +9,7 @@
     "server": "nodemon server.js",
     "front": "npm start --prefix front",
     "dev": "concurrently \"npm run server\" \"npm run front\"",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "cd front && yarn && yarn run build"
   },
   "author": "Billy Mech",
   "license": "MIT",
