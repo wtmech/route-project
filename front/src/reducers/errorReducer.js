@@ -1,14 +1,14 @@
-import { ACTIONS } from '../actions/types';
+import { ACTIONS } from "../actions/types";
 
-const initialState = {}
+const initialState = {};
 
 export default (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case ACTIONS.GET_ERRORS:
-      return action.payload
+      return action.payload;
     case ACTIONS.CLEAR_ERRORS:
       return {};
     default:
       return state;
   }
-}
+};

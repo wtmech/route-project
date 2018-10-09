@@ -12,11 +12,11 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    edit: false
+    settings: false
   };
 
-  editView = () => {
-    this.setState({ edit: !this.state.edit });
+  settingsView = () => {
+    this.setState({ settings: !this.state.settings });
   };
 
   render() {
@@ -25,16 +25,16 @@ class App extends Component {
         <div className="wrapper">
           <Header />
           <AddTrain />
-          {!this.state.edit ? (
-            <Button bsStyle="primary" onClick={this.editView}>
+          {!this.state.settings ? (
+            <Button bsStyle="primary" onClick={this.settingsView}>
               <FontAwesome className="icon" name="gear" size="lg" />
             </Button>
           ) : (
-            <Button bsStyle="primary" onClick={this.editView}>
+            <Button bsStyle="primary" onClick={this.settingsView}>
               Routes
             </Button>
           )}
-          <Content editView={this.state.edit} />
+          <Content settingsView={this.state.settings} />
         </div>
       </Provider>
     );

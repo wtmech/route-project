@@ -34,3 +34,13 @@
 .centered {
   text-align: center;
 }
+
+.list {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+}
+
+.list li {
+  width: 100px;
+}

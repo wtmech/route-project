@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-import { getRoutes, deleteRoute, editRoute } from "../../actions/routeActions";
+import { getRoutes, deleteRoute } from "../../actions/routeActions";
 
 import ContentTable from "./Table/Table";
-import EditRoutes from "./Edit/EditRoutes";
+import Settings from "./Settings/Settings";
 
 class Content extends Component {
   componentDidMount() {
@@ -24,10 +24,10 @@ class Content extends Component {
     console.log(routes);
     return (
       <div className="table-container">
-        {!this.props.editView ? (
+        {!this.props.settingsView ? (
           <ContentTable routes={routes} />
         ) : (
-          <EditRoutes
+          <Settings
             routes={routes}
             deleteRoute={this.deleteRoute}
             editRoute={this.editRoute}
@@ -44,5 +44,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getRoutes, deleteRoute, editRoute }
+  { getRoutes, deleteRoute }
 )(Content);

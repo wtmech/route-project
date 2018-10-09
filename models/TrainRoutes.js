@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 //Create Schema
@@ -16,7 +16,8 @@ const RouteSchema = new Schema({
     required: true
   },
   operator: {
-    type: String
+    type: String,
+    required: true
   },
   date: {
     type: Date,
@@ -24,4 +25,4 @@ const RouteSchema = new Schema({
   }
 });
 
-module.exports = TrainRoutes = mongoose.model('routes', RouteSchema);
+module.exports = TrainRoutes = mongoose.model("routes", RouteSchema);

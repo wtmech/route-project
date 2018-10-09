@@ -6,7 +6,6 @@ export const ACTIONS = keymirror({
   ADD_ROUTE: null,
   GET_ROUTES: null,
   GET_ROUTE: null,
-  EDIT_ROUTE: null,
   DELETE_ROUTE: null,
   CLEAR_ERRORS: null
 });

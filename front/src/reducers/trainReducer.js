@@ -22,11 +22,6 @@ export default (state = initialState, action) => {
         ...state,
         routes: [action.payload, ...state.routes]
       };
-    case ACTIONS.EDIT_ROUTE:
-      return {
-        ...state,
-        routes: [action.payload, ...state.routes]
-      };
     case ACTIONS.DELETE_ROUTE:
       return {
         ...state,
