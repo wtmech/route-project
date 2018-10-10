@@ -3,7 +3,6 @@ import FontAwesome from "react-fontawesome";
 
 class EditRoutes extends Component {
   render() {
-    console.log(this.props.routes);
     const list = this.props.routes.map(route => {
       return (
         <ul key={route._id} className="list">
