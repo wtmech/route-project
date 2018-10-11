@@ -52,6 +52,24 @@ router.post("/", (req, res) => {
   });
 });
 
+// @route   UPDATE api/routes/:id
+// @desc    Update route
+// @access  public
+router.put("/:id", function(req, res) {
+  trainRoutes.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    function(err, route) {
+      if (err) {
+        return next(err);
+      } else {
+        res.send(route);
+      }
+    }
+  );
+});
+
 // @route   DELETE api/routes/:id
 // @desc    Delete train
 // @access  public

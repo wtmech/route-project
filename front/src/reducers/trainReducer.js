@@ -22,6 +22,16 @@ export default (state = initialState, action) => {
         ...state,
         routes: [action.payload, ...state.routes]
       };
+    case ACTIONS.EDIT_ROUTE:
+      return {
+        ...state,
+        routes: state.routes.map(route => {
+          if (route._id === action.payload._id) {
+            route = action.payload;
+          }
+          return route;
+        })
+      };
     case ACTIONS.DELETE_ROUTE:
       return {
         ...state,

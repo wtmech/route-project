@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-import { getRoutes, deleteRoute } from "../../actions/routeActions";
+import { getRoutes, deleteRoute, editRoute } from "../../actions/routeActions";
 
 import ContentTable from "./Table/Table";
 import Settings from "./Settings/Settings";
@@ -43,5 +43,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getRoutes, deleteRoute }
+  { getRoutes, deleteRoute, editRoute }
 )(Content);

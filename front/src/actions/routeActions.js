@@ -20,6 +20,24 @@ export const addRoute = routeData => dispatch => {
     );
 };
 
+export const editRoute = (routeData, id) => dispatch => {
+  dispatch(clearErrors());
+  axios
+    .put(`/api/routes/${id}`, routeData)
+    .then(res =>
+      dispatch({
+        type: ACTIONS.EDIT_ROUTE,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: ACTIONS.GET_ERRORS,
+        payload: err.res.data
+      })
+    );
+};
+
 export const getRoutes = () => dispatch => {
   axios
     .get("/api/routes")
